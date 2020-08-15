@@ -21,7 +21,14 @@ public class Item {
 
     public Item(String name) {
         this.name = name;
-        this.id = new Random().nextInt(1000);
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     public int getId() {

@@ -22,7 +22,7 @@ public class StartUI {
                 System.out.println("=== Show all items ====");
                 Item[] printItems = tracker.findAll();
                 for (Item printItem : printItems) {
-                    System.out.println(printItem.toString());
+                    System.out.println(printItem);
                 }
             } else if (select == 2) {
                 System.out.println("=== Edit item ====");
@@ -51,7 +51,7 @@ public class StartUI {
                 int id = Integer.valueOf(scanner.nextLine());
                 Item findItem = tracker.findById(id);
                 if (findItem != null) {
-                    System.out.println(findItem.toString());
+                    System.out.println(findItem);
                 } else {
                     System.out.println("Заявка с таким id не найдена");
                 }
@@ -60,9 +60,9 @@ public class StartUI {
                     System.out.print("Enter name: ");
                     String name = scanner.nextLine();
                     Item[] findItems = tracker.findByName(name);
-                    if (findItems != null && findItems.length > 0) {
+                    if (findItems.length > 0) {
                         for (Item findItem : findItems) {
-                            System.out.println(findItem.toString());
+                            System.out.println(findItem);
                         }
                     } else {
                         System.out.println("Заявки с таким именем не найдены");
