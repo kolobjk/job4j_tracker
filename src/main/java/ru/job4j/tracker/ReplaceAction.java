@@ -7,14 +7,15 @@ public class ReplaceAction implements UserAction {
     public ReplaceAction(Output out) {
         this.out = out;
     }
-
     @Override
     public String name() {
-        return "=== Replace item ====";
+        return "Replace";
     }
+
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
+        out.println("=== Replace item ====");
         int id = input.askInt("Enter id: ");
         String name = input.askStr("Enter new name: ");
         Item newItem = new Item(name);
