@@ -14,7 +14,8 @@ public class StartUITest {
         String[] answers = {"Fix PC"};
         Input input = new StubInput(answers);
         Tracker tracker = new Tracker();
-        StartUI.createItem(input, tracker);
+        CreateItem createItem = new CreateItem();
+        createItem.execute(input, tracker);
         Item created = tracker.findAll()[0];
         Item expected = new Item("Fix PC");
         assertThat(created.getName(), is(expected.getName()));
@@ -25,8 +26,9 @@ public class StartUITest {
         String[] answers = {"One", "Two"};
         Input input = new StubInput(answers);
         Tracker tracker = new Tracker();
-        StartUI.createItem(input, tracker);
-        StartUI.createItem(input, tracker);
+        CreateItem createItem = new CreateItem();
+        createItem.execute(input, tracker);
+        createItem.execute(input, tracker);
         Item[] created = tracker.findAll();
         Item expectedOne = new Item("One");
         Item expectedTwo = new Item("Two");
