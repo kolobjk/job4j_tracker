@@ -257,19 +257,10 @@ public class StartUITest {
     public void checkOutput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0"}
+                new String[] {"one", "1"}
         );
-        Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                new Exit()
-        };
         ValidateInput input = new ValidateInput(out, in);
-        new StartUI(out).init(input, tracker, actions);
-        assertThat(out.toString(), is(
-                String.format(
-                        "Menu.%n"
-                                + "0. Exit%n"
-                )
-        ));
+        int selected = input.askInt("Enter menu:");
+        assertThat(out.toString(), is("Please enter validate data again.\r\n"));
     }
 }
