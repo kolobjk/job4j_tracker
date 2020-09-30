@@ -21,6 +21,7 @@ public class ItemTest {
         assertThat(items.get(0).getName(), is(item2.getName()));
         assertThat(items.get(1).getName(), is(item1.getName()));
     }
+
     @Test
     public void whenSortItemDesc() {
         ArrayList<Item> items = new ArrayList<>();

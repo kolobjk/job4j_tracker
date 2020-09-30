@@ -26,13 +26,13 @@ public class Tracker {
     }
 
     public List<Item> findByName(String key) {
-        List<Item> ItemsByName = new ArrayList<>();
+        List<Item> itemsByName = new ArrayList<>();
         for (Item item : items) {
             if (key.equals(item.getName())) {
-                ItemsByName.add(item);
+                itemsByName.add(item);
             }
         }
-        return ItemsByName;
+        return itemsByName;
     }
 
     private int indexOf(int id) {
