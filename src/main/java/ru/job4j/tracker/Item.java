@@ -1,10 +1,17 @@
 package ru.job4j.tracker;
 
+import java.time.LocalDateTime;
 import java.util.Random;
 
 public class Item {
     private int id;
     private String name;
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    private final LocalDateTime created = LocalDateTime.now();
 
     public Item() {
 
